@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilol.css">
+    <script src="login.js"></script>
+</head>
+<script>
+    function validacao() {
+        var email = document.getElementById("email").value;
+        var senha = document.getElementById("senha").value;
+        var erro = document.getElementById("erro");
+
+        if (email === 'andreboing1@gmail.com' && senha === '12345678') {
+            erro.innerHTML = "Autenticação realizada com sucesso!";
+            return true;
+        } else {
+            erro.innerHTML = "Erro na autenticação. Verifique suas credenciais.";
+            return false;
+        }
+    }
+
+    function limpa() {
+        document.getElementById("erro").innerHTML = "";
+    }
+</script>
+<body>
+    <div id="container">
+        <img src="imagens/perfil.png">
+        <form onsubmit="return validacao();">
+            <div class="form-group col-md-5">
+                <label for="inputEmail">Email:</label>
+                <input class="email" type="email" name="email" id="email" placeholder="Digite seu e-mail" onkeypress="limpa();">
+            </div>
+            <div class="form-group col-md-5">
+                <label for="inputSenha">Senha:</label>
+                <input class="senha" type="password" name="senha" id="senha" placeholder="Digite sua senha" onkeypress="limpa();">
+            </div>
+            <div>
+                <input class="submit" type="submit" value="Logar">
+            </div>
+        </form>
+        <p id="erro" class="style-message"></p>
+    </div>
+</body>
+</html>
